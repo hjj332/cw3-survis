@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SurVis Literature Browser - LLM Code Generation</title>
+<style>
+  body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f4f6f8; color: #172033; }
+  header { background: #0f4c81; color: white; padding: 18px 28px; display: flex; justify-content: space-between; align-items: center; }
+  header h1 { margin: 0; font-size: 22px; }
+  header .small { opacity: .86; font-size: 13px; }
+  .layout { display: grid; grid-template-columns: 260px 1fr; min-height: calc(100vh - 70px); }
+  aside { background: white; border-right: 1px solid #d8dee9; padding: 18px; }
+  aside h2 { font-size: 15px; margin: 0 0 10px; color: #0f4c81; }
+  .facet { margin-bottom: 18px; }
+  .chip { display: inline-block; margin: 4px 4px 0 0; padding: 5px 8px; border-radius: 4px; background: #e7eef5; font-size: 12px; }
+  main { padding: 18px 24px; }
+  .summary { display: grid; grid-template-columns: 1.2fr .8fr; gap: 16px; margin-bottom: 16px; }
+  .panel { background: white; border: 1px solid #d8dee9; border-radius: 6px; padding: 14px; }
+  .bars { display: flex; align-items: end; height: 130px; gap: 28px; padding: 10px 20px 4px; border-bottom: 1px solid #aab3c0; }
+  .bar { width: 54px; background: #2b7bbb; color: white; text-align: center; font-weight: bold; display: flex; align-items: flex-start; justify-content: center; padding-top: 5px; }
+  .bar.y2021 { height: 52px; }
+  .bar.y2022 { height: 104px; background: #1b9e77; }
+  .bar.y2023 { height: 104px; background: #7b3fc8; }
+  .axis { display: flex; gap: 42px; padding-left: 28px; font-size: 13px; color: #475569; }
+  .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .paper-card { background: white; border: 1px solid #d8dee9; border-radius: 6px; padding: 12px 14px; box-shadow: 0 1px 2px rgba(15,23,42,.05); }
+  .paper-card h3 { margin: 7px 0 5px; font-size: 16px; line-height: 1.24; }
+  .paper-card p { margin: 4px 0; color: #475569; font-size: 13px; }
+  .paper-top { display: flex; justify-content: space-between; align-items: center; }
+  .tag { background: #e0f2fe; color: #075985; border-radius: 4px; padding: 3px 7px; font-size: 12px; font-weight: bold; }
+  .year { color: #64748b; font-size: 12px; }
+  .doi { font-family: Consolas, monospace; }
+</style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>SurVis Literature Browser: LLMs for Code Generation</h1>
+      <div class="small">Local draft containing the 10 papers reviewed in COMP4037 Coursework 3</div>
+    </div>
+    <div class="small">Topic: Evaluation, usability, and security</div>
+  </header>
+  <div class="layout">
+    <aside>
+      <div class="facet">
+        <h2>Categories</h2>
+        <span class="chip">Survey</span><span class="chip">Benchmark</span><span class="chip">Model</span><span class="chip">User study</span><span class="chip">Security</span>
+      </div>
+      <div class="facet">
+        <h2>Years</h2>
+        <span class="chip">2021</span><span class="chip">2022</span><span class="chip">2023</span>
+      </div>
+      <div class="facet">
+        <h2>Evidence Types</h2>
+        <span class="chip">pass@k</span><span class="chip">unit tests</span><span class="chip">multilingual benchmark</span><span class="chip">user study</span><span class="chip">security audit</span>
+      </div>
+    </aside>
+    <main>
+      <section class="summary">
+        <div class="panel">
+          <h2>Publication Years</h2>
+          <div class="bars"><div class="bar y2021">2</div><div class="bar y2022">4</div><div class="bar y2023">4</div></div>
+          <div class="axis"><span>2021</span><span>2022</span><span>2023</span></div>
+        </div>
+        <div class="panel">
+          <h2>Classification</h2>
+          <p>The collection is grouped into survey/benchmark papers, model-development papers, and deployment-risk papers. This mirrors the structure used in the literature review.</p>
+        </div>
+      </section>
+      <section class="cards">
+    <article class="paper-card" data-year="2023" data-category="Benchmark">
+      <div class="paper-top"><span class="tag">Benchmark</span><span class="year">2023</span></div>
+      <h3>MultiPL-E: A Scalable and Polyglot Approach to Benchmarking Neural Code Generation</h3>
+      <p>Cassano et al. (2023)</p>
+      <p class="doi">DOI: 10.1109/TSE.2023.3267446</p>
+    </article>
+    
+
+    <article class="paper-card" data-year="2021" data-category="Benchmark">
+      <div class="paper-top"><span class="tag">Benchmark</span><span class="year">2021</span></div>
+      <h3>Evaluating Large Language Models Trained on Code</h3>
+      <p>Chen et al. (2021)</p>
+      <p class="doi">DOI: 10.48550/arXiv.2107.03374</p>
+    </article>
+    
+
+    <article class="paper-card" data-year="2022" data-category="Model">
+      <div class="paper-top"><span class="tag">Model</span><span class="year">2022</span></div>
+      <h3>Competition-level code generation with AlphaCode</h3>
+      <p>Li et al. (2022)</p>
+      <p class="doi">DOI: 10.1126/science.abq1158</p>
+    </article>
+    
+
+    <article class="paper-card" data-year="2022" data-category="Security">
+      <div class="paper-top"><span class="tag">Security</span><span class="year">2022</span></div>
+      <h3>Asleep at the Keyboard? Assessing the Security of GitHub Copilot's Code Contributions</h3>
+      <p>Pearce et al. (2022)</p>
+      <p class="doi">DOI: 10.1109/SP46214.2022.9833571</p>
+    </article>
+    
+
+    <article class="paper-card" data-year="2023" data-category="Model">
+      <div class="paper-top"><span class="tag">Model</span><span class="year">2023</span></div>
+      <h3>Code Llama: Open Foundation Models for Code</h3>
+      <p>Roziere et al. (2023)</p>
+      <p class="doi">DOI: 10.48550/arXiv.2308.12950</p>
+    </article>
+    
+
+    <article class="paper-card" data-year="2022" data-category="User study">
+      <div class="paper-top"><span class="tag">User study</span><span class="year">2022</span></div>
+      <h3>Expectation vs. Experience: Evaluating the Usability of Code Generation Tools Powered by Large Language Models</h3>
+      <p>Vaithilingam et al. (2022)</p>
+      <p class="doi">DOI: 10.1145/3491101.3519665</p>
+    </article>
+    
+
+    <article class="paper-card" data-year="2021" data-category="Model">
+      <div class="paper-top"><span class="tag">Model</span><span class="year">2021</span></div>
+      <h3>CodeT5: Identifier-aware Unified Pre-trained Encoder-Decoder Models for Code Understanding and Generation</h3>
+      <p>Wang et al. (2021)</p>
+      <p class="doi">DOI: 10.18653/v1/2021.emnlp-main.685</p>
+    </article>
+    
+
+    <article class="paper-card" data-year="2023" data-category="Model">
+      <div class="paper-top"><span class="tag">Model</span><span class="year">2023</span></div>
+      <h3>CodeT5+: Open Code Large Language Models for Code Understanding and Generation</h3>
+      <p>Wang et al. (2023)</p>
+      <p class="doi">DOI: 10.18653/v1/2023.emnlp-main.68</p>
+    </article>
+    
+
+    <article class="paper-card" data-year="2022" data-category="Benchmark">
+      <div class="paper-top"><span class="tag">Benchmark</span><span class="year">2022</span></div>
+      <h3>A systematic evaluation of large language models of code</h3>
+      <p>Xu et al. (2022)</p>
+      <p class="doi">DOI: 10.1145/3520312.3534862</p>
+    </article>
+    
+
+    <article class="paper-card" data-year="2023" data-category="Survey">
+      <div class="paper-top"><span class="tag">Survey</span><span class="year">2023</span></div>
+      <h3>Large Language Models Meet NL2Code: A Survey</h3>
+      <p>Zan et al. (2023)</p>
+      <p class="doi">DOI: 10.18653/v1/2023.acl-long.411</p>
+    </article>
+    </section>
+    </main>
+  </div>
+</body>
+</html>
